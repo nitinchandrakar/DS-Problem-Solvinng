@@ -20,8 +20,6 @@ function rotateArrKTerms(arr, k) {
       arr[j] = temp;
   }
 
-  console.log(arr);
-
   arr = reversePartArr(arr, 0, k-1);
   arr = reversePartArr(arr, k, N-1);
 
