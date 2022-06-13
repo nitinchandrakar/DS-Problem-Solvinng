@@ -14,5 +14,23 @@ function findPair(arr, k){
     return false;
 }
 
+function findPairBetterWay(arr, sum){
+    let complimentSet = new Set();
+
+    for(let i=0;i<arr.length;i++){
+        if(complimentSet.has(arr[i])){
+            console.log(complimentSet, arr[i])
+            return true
+        }else{
+            complimentSet.add(sum-arr[i])
+        }
+       
+    }
+
+    return false;
+}
+
 
 console.log(findPair([2,1,-4,5,5,2,1,4,0], -1))
+
+console.log(findPairBetterWay([2,1,-4,5,5,2,1,4,0], -1))
