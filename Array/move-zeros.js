@@ -22,6 +22,10 @@ Constraints:
  
 
 Follow up: Could you minimize the total number of operations done?
+
+Reference : 
+https://www.youtube.com/watch?v=PNJoyRaIW7U&ab_channel=TECHDOSE
+
 */
 
 function moveZeros(arr) {
