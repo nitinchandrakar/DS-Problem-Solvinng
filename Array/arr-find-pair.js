@@ -19,7 +19,6 @@ function findPairBetterWay(arr, sum){
 
     for(let i=0;i<arr.length;i++){
         if(complimentSet.has(arr[i])){
-            console.log(complimentSet, arr[i])
             return true
         }else{
             complimentSet.add(sum-arr[i])
