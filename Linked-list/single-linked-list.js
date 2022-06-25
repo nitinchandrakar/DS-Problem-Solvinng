@@ -77,6 +77,27 @@ class SingleLinkList{
         return arr;
     }
 
+    reverse(){
+        let first = this.head;
+        this.tail = this.head;
+        let second = first.next;
+
+        while(second){
+            let temp = second.next;
+            second.next = first;
+            first = second;
+            second = temp;
+        }
+
+        this.head.next = null;
+        this.head = first;
+
+        return this.printList();
+
+    }
+
+     
+
 }
 
 const linkedList  = new SingleLinkList(1);
@@ -86,6 +107,9 @@ linkedList.append(4)
 linkedList.append(5)
 linkedList.insert(1,10)
 linkedList.remove(1);
+console.log(linkedList.printList())
+
+linkedList.reverse();
 console.log(linkedList.printList())
 
 
