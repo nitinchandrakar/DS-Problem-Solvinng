@@ -7,3 +7,5 @@ function febonacci(n){
 }
 
 console.log(febonacci(10))
+
+//O(2^N)
