@@ -1,3 +1,8 @@
+/**
+ * 
+ * @param {String} str 
+ * @returns {String}
+ */
 function reverseString(str) {
   if (str == "") {
     return "";
