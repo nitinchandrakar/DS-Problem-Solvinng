@@ -4,10 +4,10 @@
 BFS
 
 //If the tree is very deep and solutions are rare: 
-DFS
+BFS (DFS will take long)
 
 //If the tree is very wide:
-BFS
+DFS (BFS need too much memory)
 
 //If solutions are frequent but located deep in the tree:
 DFS
