@@ -18,6 +18,7 @@ Input: nums = [5,4,-1,7,8]
 Output: 23
 
 Reference : 
+Kenden's Algorithm
 https://www.youtube.com/watch?v=86CQq3pKSUw&ab_channel=CSDojo
 https://www.youtube.com/watch?v=YxuK6A3SvTs&ab_channel=TECHDOSE
 
