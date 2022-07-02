@@ -1,7 +1,7 @@
 /*Given an array evlement and Si, Ei reverse array from Si to Ei note Si<=Ei, Reverse the part of the array*/
 
 function partialReverseArr(arr, Si, Ei) {
-  for (var i = Si, j = Ei; i < (Ei - Si); i++, j--) {
+  for (var i = Si, j = Ei; i < Ei ; i++, j--) {
     var temp = arr[i];
     arr[i] = arr[j];
     arr[j] = temp;
