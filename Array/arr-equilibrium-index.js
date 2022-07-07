@@ -56,7 +56,8 @@ There is no such index.
 function equilibriumIndex(arr) {
   let P = [];
   let N = arr.length;
-
+ 
+  //Find prefix sum first
   for (let i = 0; i < N; i++) {
     if (i == 0) {
       P.push(arr[i]);
@@ -68,9 +69,9 @@ function equilibriumIndex(arr) {
   let right = 0;
   for (let i = 0; i < N; i++) {
     if (i > 0) {
-      left = P[i - 1];
+      left = P[i - 1]; // Sum[0 i-1] = Pf[i-1]
     }
-    right = P[N - 1] - P[i];
+    right = P[N - 1] - P[i]; // Sum[i+1 N-1] = Pf[N-1] - P[i+1-1]
     if (left == right) {
       return i;
     }
