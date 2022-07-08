@@ -67,7 +67,8 @@ Questions:
 
 #118 Pascal's Triangle    
 
-#70 Climbing Stairs    
+#70 Climbing Stairs 
+https://www.youtube.com/watch?v=Y0lT9Fck7qI&ab_channel=NeetCode   
 
 #101 Symmetric Tree    
 
@@ -118,3 +119,11 @@ Questions:
 #7 Reverse Integer    
 
 #94 Binary Tree Inorder Traversal   
+
+
+
+Jump game
+https://www.youtube.com/watch?v=muDPTDrpS28&ab_channel=TECHDOSE
+
+Subarray sum equals K | Number of subarrays with sum equals K
+https://www.youtube.com/watch?v=HbbYPQc-Oo4&ab_channel=TECHDOSE
