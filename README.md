@@ -3,7 +3,11 @@
 This repo containes multiple data stracture problem and solution
 
 Reference :
-https://github.com/zero-to-mastery/javascript-algorithms
+1. https://github.com/zero-to-mastery/javascript-algorithms
+
+2. Leetcode 75
+   https://gist.github.com/krishnadey30/88c4e2f601e96597974c00185e479532
+
 
 # Graph
     1. Breadth First Search or BFS for a Graph
@@ -22,6 +26,7 @@ Questions:
 3. https://leetcode.com/problems/climbing-stairs/
 
 # Coading Problem 
+https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/learn/lecture/12246878#announcements
 
 #344 Reverse String   
 
@@ -48,6 +53,7 @@ Questions:
 #122 Best Time to Buy and Sell Stock II    
 
 #242 Valid Anagram    
+https://leetcode.com/problems/valid-anagram/
 
 #217 Contains Duplicate    
 
