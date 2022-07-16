@@ -62,43 +62,131 @@ Explanation 2:
 *
 */
 
-function pickFromBothSide(arr, b){
-   let firstHalf = [];
-   let secondHalf = []
-   for(let i=0, j=arr.length-1;i<b;i++,j--){
-        if(i==0){
-            secondHalf.push(arr[j]);
-            firstHalf.push(arr[i]);
-        }else{
-            //arr[i] = arr[i]+arr[i-1];
-            firstHalf.push(firstHalf[i-1]+arr[i])
-            secondHalf.push(secondHalf[i-1]+arr[j]); 
-        }
-   }
+// optimal approach
 
-   let max;
-   if(firstHalf[b-1]>secondHalf[b-1]){
-    max = firstHalf[b-1];
-   }else{
-    max = secondHalf[b-1];
-   }
-   for(let i=0,j=b-2;i<b-1;i++,j--){
-        if(firstHalf[i]+secondHalf[j]>max){
-            max = firstHalf[i]+secondHalf[j];
-        }
+function pick(arr, B) {
+  const N = arr.length;
 
-   }
+  //find prefix Sum
+  const prefixSum = [];
 
-   return max;
+  for (let i = 0; i < N; i++) {
+    if (i == 0) {
+      prefixSum[i] = arr[i];
+    } else {
+      prefixSum[i] = prefixSum[i - 1] + arr[i];
+    }
+  }
+
+  let ans = prefixSum[B - 1];
+  if(B==1){
+    return Math.max(ans, prefixSum[N-1]-prefixSum[N-B-1])
+  }
+
+  for (let i = B - 1; i >= 1; i--) {
+    let sum = 0;
+    const x = B-i;
+    // left range + right range sum
+    //handle edge cases to calulate left range sum
+    if(i!=0){
+        // sum of left range [0,i-1]
+       sum = sum + prefixSum[i-1];
+    }
+    // sum of right range [N-x, N-1]
+    sum = sum + prefixSum[N-1] - prefixSum[N-x-1];
+    ans = Math.max(ans, sum);
+  }
+
+  return ans;
+}
+
+console.log("======Optimal solution==========")
+console.log(pick([5, -2, 3, 1, 2], 3));
+
+console.log(pick([1, 2], 1));
+
+console.log(
+  pick(
+    [
+      -712, -894, 40, -58, 264, -352, 446, 805, 890, -271, -630, 350, 6, 101,
+      -607, 548, 629, -377, -916, 954, -244, 840, -34, 376, 931, -692, -56,
+      -561, -374, 323, 537, 538, -882, -918, -71, -459, -167, 115, -361, 658,
+      -296, 930, 977, -694, 673, -614, 21, -255, -76, 72, -730, 829, -223, 573,
+      97, -488, 986, 290, 161, -364, -645, -233,
+    ],
+    34
+  )
+);
+
+console.log(
+  pick(
+    [
+      448, 200, 458, -382, -420, 796, -202, 281, 589, -202, -991, 157, -528,
+      622, -462, -708, -962, -821, -810, 657, 958, -809, 815,
+    ],
+    4
+  )
+);
+
+console.log(pick([448, 200, 458, -382, 657, 958, -809, 815], 4));
+
+// brute force approach
+function pickFromBothSide(arr, b) {
+  let firstHalf = [];
+  let secondHalf = [];
+  for (let i = 0, j = arr.length - 1; i < b; i++, j--) {
+    if (i == 0) {
+      secondHalf.push(arr[j]);
+      firstHalf.push(arr[i]);
+    } else {
+      //arr[i] = arr[i]+arr[i-1];
+      firstHalf.push(firstHalf[i - 1] + arr[i]);
+      secondHalf.push(secondHalf[i - 1] + arr[j]);
+    }
+  }
+
+  let max;
+  if (firstHalf[b - 1] > secondHalf[b - 1]) {
+    max = firstHalf[b - 1];
+  } else {
+    max = secondHalf[b - 1];
+  }
+  for (let i = 0, j = b - 2; i < b - 1; i++, j--) {
+    if (firstHalf[i] + secondHalf[j] > max) {
+      max = firstHalf[i] + secondHalf[j];
+    }
+  }
+
+  return max;
   // console.log(secondHalf, arr)
 }
 
-console.log(pickFromBothSide([5, -2, 3 , 1, 2], 3));
+console.log("======brut force==========")
+console.log(pickFromBothSide([5, -2, 3, 1, 2], 3));
 
-console.log(pickFromBothSide([1,2], 1));
+console.log(pickFromBothSide([1, 2], 1));
 
-console.log(pickFromBothSide([ -712, -894, 40, -58, 264, -352, 446, 805, 890, -271, -630, 350, 6, 101, -607, 548, 629, -377, -916, 954, -244, 840, -34, 376, 931, -692, -56, -561, -374, 323, 537, 538, -882, -918, -71, -459, -167, 115, -361, 658, -296, 930, 977, -694, 673, -614, 21, -255, -76, 72, -730, 829, -223, 573, 97, -488, 986, 290, 161, -364, -645, -233 ], 34));
+console.log(
+  pickFromBothSide(
+    [
+      -712, -894, 40, -58, 264, -352, 446, 805, 890, -271, -630, 350, 6, 101,
+      -607, 548, 629, -377, -916, 954, -244, 840, -34, 376, 931, -692, -56,
+      -561, -374, 323, 537, 538, -882, -918, -71, -459, -167, 115, -361, 658,
+      -296, 930, 977, -694, 673, -614, 21, -255, -76, 72, -730, 829, -223, 573,
+      97, -488, 986, 290, 161, -364, -645, -233,
+    ],
+    34
+  )
+);
 
-console.log(pickFromBothSide([ 448, 200, 458, -382, -420, 796, -202, 281, 589, -202, -991, 157, -528, 622, -462, -708, -962, -821, -810, 657, 958, -809, 815 ], 4))
+console.log(
+  pickFromBothSide(
+    [
+      448, 200, 458, -382, -420, 796, -202, 281, 589, -202, -991, 157, -528,
+      622, -462, -708, -962, -821, -810, 657, 958, -809, 815,
+    ],
+    4
+  )
+);
 
-console.log(pickFromBothSide([ 448, 200, 458, -382, 657, 958, -809, 815 ], 4))
+console.log(pickFromBothSide([448, 200, 458, -382, 657, 958, -809, 815], 4));
