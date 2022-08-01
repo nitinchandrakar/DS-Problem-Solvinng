@@ -11,6 +11,7 @@
 - [x] [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 - [x] [3Sum](https://leetcode.com/problems/3sum/)
 - [x] [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+      https://www.youtube.com/watch?v=d-TTrs60PR4&ab_channel=WhatsCoding
 
 ---
 
@@ -71,6 +72,7 @@
 - [x] [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
 - [x] [Remove Nth Node From End Of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 - [x] [Reorder List](https://leetcode.com/problems/reorder-list/)
+       sol: https://www.youtube.com/watch?v=S5bfdUTrKLM&ab_channel=NeetCode
 
 ---
 
