@@ -34,7 +34,6 @@ var dfs = function (image, sr, sc, newColor, rows, cols, source) {
     return image;
   }
 
-
   image[sr][sc] = newColor;
 
   dfs(image, sr - 1, sc, newColor, rows, cols, source);
@@ -57,7 +56,7 @@ var floodFill = function (image, sr, sc, color) {
 
   const source = image[sr][sc];
 
-  if(source==color){
+  if (source == color) {
     return image;
   }
 
@@ -74,5 +73,17 @@ console.log(
     1,
     1,
     2
+  )
+);
+
+console.log(
+  floodFill(
+    [
+      [0, 0, 0],
+      [0, 0, 0],
+    ],
+    0,
+    0,
+    0
   )
 );
