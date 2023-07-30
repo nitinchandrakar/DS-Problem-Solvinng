@@ -1,0 +1,3 @@
+/*all subarray sum
+Given an element find all subarray sum
+*/
