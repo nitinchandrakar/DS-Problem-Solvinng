@@ -1,3 +1,10 @@
+/**
+ * Given arr[N]=0
+ * Query [(i,j,x)...]
+ * Add x to all numbers from A[i] to A[j] and return final array
+ * 
+*/
+
 public class QuerySum {
     public static int[] querySum(int[] arr, int[][] query){
         int N = arr.length;
