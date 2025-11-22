@@ -1,0 +1,17 @@
+{
+  "name": "ds-problem-solving",
+  "version": "1.0.0",
+  "description": "This repo containes multiple data stracture problem and solution",
+  "main": "jest.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "jest": "^30.2.0"
+  }
+}
